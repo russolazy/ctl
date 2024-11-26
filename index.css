@@ -1,0 +1,114 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@media (max-width: 350px) {
+    header {
+        height: 50vh;
+        background-image: radial-gradient(#FF6060, #222222);
+        position: relative;
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        height: 51vh;
+        width: 100%;
+        background-image: conic-gradient(from var(--angle), transparent 30%, #FF6060, #ea4b4b);
+        z-index: -1;
+        animation: spin 3s linear infinite;
+    }
+    
+    header .banner {
+        height: 300px;
+        width: 200px;
+        border-radius: 10px;
+        border: 2px solid rgb(255, 255, 255);
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 10px 10px rgb(201, 201, 201);
+        background-image: url(nade.webp);
+        background-size: cover;
+        position: relative;
+    }
+
+
+    header > .text {
+        font-size: 30px;
+        font-weight: bold;
+        -webkit-text-stroke: .5px white;
+        color: transparent;
+    }
+    
+    header .txt-1 {
+        position: absolute;
+        top: 50%;
+        transform: rotate(-90deg) translate(0, -60px);
+    }
+    
+    header .txt-2 {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: rotate(90deg) translate(0, -70px);
+    }
+
+    main {
+        margin-top: 100px;
+        text-align: center;
+        padding: 0 1em;
+    }
+
+    main section p {
+        margin-bottom: 10px;
+    }
+
+    main section h3, p {
+        margin-bottom: 20px;
+        color: #333;
+    }
+   
+    main section h3 {
+        font-weight: 800;
+    }
+
+    main section p {
+        font-size: 14px;
+    }
+
+    main section button {
+        padding: 1em;
+        border: none;
+        color: white;
+        background-color: #FF6060;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow: 5px 10px 10px red;
+    }
+
+    main section button:hover {
+        background-color: #c84c4c;
+    }
+}
+
