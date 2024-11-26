@@ -21,7 +21,7 @@
     inherits: false;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 450px) {
     header {
         height: 50vh;
         background-image: radial-gradient(#FF6060, #222222);
